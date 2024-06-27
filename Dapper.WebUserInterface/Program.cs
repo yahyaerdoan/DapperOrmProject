@@ -1,7 +1,12 @@
+using Dapper.WebUserInterface.Context;
+using Dapper.WebUserInterface.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<DapperOrmProjectContext>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
