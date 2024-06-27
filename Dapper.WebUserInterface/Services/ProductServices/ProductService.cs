@@ -75,6 +75,7 @@ namespace Dapper.WebUserInterface.Services.ProductServices
                 ReorderLevel = @ReorderLevel, 
                 Discontinued = @Discontinued 
             WHERE ProductID = @ProductID";
+
             var paramaters = new DynamicParameters();
             paramaters.Add("ProductName", updateProductDto.ProductName);
             paramaters.Add("SupplierID", updateProductDto.SupplierID);
