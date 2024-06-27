@@ -24,7 +24,7 @@ namespace Dapper.WebUserInterface.Services
 
         public async Task DeleteCategoryAsync(int id)
         {
-            string query = "Delete FROM Categories WHERE CategoryID = @CategoryID";
+            string query = "DELETE FROM Categories WHERE CategoryID = @CategoryID";
             var parameters = new DynamicParameters();
             parameters.Add("categoryID", id);
             var connection = _context.CreateConnection();

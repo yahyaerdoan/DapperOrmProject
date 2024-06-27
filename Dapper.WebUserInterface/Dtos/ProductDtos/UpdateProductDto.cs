@@ -1,7 +1,8 @@
 ﻿namespace Dapper.WebUserInterface.Dtos.ProductDtos
 {
-    public class CreateProductDto
+    public class UpdateProductDto
     {
+        public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int SupplierID { get; set; }
         public int CategoryID { get; set; }
