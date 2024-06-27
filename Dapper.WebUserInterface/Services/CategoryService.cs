@@ -24,7 +24,7 @@ namespace Dapper.WebUserInterface.Services
 
         public async Task DeleteCategoryAsync(int id)
         {
-            string query = "Delete From Categories Where CategoryID=@CategoryID";
+            string query = "Delete FROM Categories WHERE CategoryID = @CategoryID";
             var parameters = new DynamicParameters();
             parameters.Add("categoryID", id);
             var connection = _context.CreateConnection();
@@ -33,7 +33,7 @@ namespace Dapper.WebUserInterface.Services
 
         public async Task<List<ResultCategoryDto>> GetCategoriesAsync()
         {
-            string query = "Select * From Categories";
+            string query = "SELECT * FROM Categories";
             var connection = _context.CreateConnection();
             var values = await connection.QueryAsync<ResultCategoryDto>(query);
             return values.ToList();
@@ -41,13 +41,12 @@ namespace Dapper.WebUserInterface.Services
 
         public async Task<GetCategoryByIdDto> GetCategoryByAsync(int id)
         {
-            string query = " Select * From Categories Where CategoryID=@CategoryID";
+            string query = " SELECT * FROM Categories WHERE CategoryID = @CategoryID";
             var parameters = new DynamicParameters();
             parameters.Add("@CategoryID", id);
             var connection = _context.CreateConnection();
             var values = await connection.QueryFirstOrDefaultAsync<GetCategoryByIdDto>(query, parameters);
             return values;
-
         }
 
         public async Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
