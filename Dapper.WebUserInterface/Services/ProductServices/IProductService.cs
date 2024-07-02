@@ -9,5 +9,6 @@ namespace Dapper.WebUserInterface.Services.ProductServices
         Task CreateProductAsync(CreateProductDto createProductDto);
         Task DeleteProductAsync(int id);
         Task UpdateProductAsync(UpdateProductDto updateProductDto);
+        Task<List<ResultProductsWithCategoriesDto>> GetProductsWithCategoriesAsync();
     }
 }

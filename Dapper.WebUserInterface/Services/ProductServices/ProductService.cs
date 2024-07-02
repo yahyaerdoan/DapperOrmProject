@@ -61,6 +61,11 @@ namespace Dapper.WebUserInterface.Services.ProductServices
             return values.ToList();
         }
 
+        public Task<List<ResultProductsWithCategoriesDto>> GetProductsWithCategoriesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateProductAsync(UpdateProductDto updateProductDto)
         {
             string query = @"
